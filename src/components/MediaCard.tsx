@@ -1,12 +1,12 @@
 /* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { ButtonBase, Modal, Box, Button, Grid } from "@mui/material";
-import { FileOpen, ErrorOutline } from "@mui/icons-material";
+import { ButtonBase } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
+import ModalPopup from "./ModalPopup";
 
 type MediaCardProps = {
   img: string;
@@ -14,20 +14,6 @@ type MediaCardProps = {
   title: string;
   description?: string;
   link: string;
-};
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 600,
-  bgcolor: "background.paper",
-  border: "1px solid #ddd",
-  borderRadius: "10px",
-  boxShadow: 24,
-  p: 4,
-  padding: "50px 50px",
 };
 
 export default function MediaCard({
@@ -66,72 +52,17 @@ export default function MediaCard({
   }
 
   const showModal = requireEULA() && (
-    <Modal open={open} onClose={handleClose}>
-      <Box sx={style}>
-        <div style={{ display: "grid", justifyItems: "center" }}>
-          <ErrorOutline sx={{ fontSize: 100, color: "#707070" }} />
-        </div>
-        <Typography
-          id="modal-modal-title"
-          variant="h5"
-          component="h2"
-          fontWeight={600}
-          sx={{ color: "#707070" }}
-        >
-          EULA Acceptance
-        </Typography>
-        <Typography
-          id="modal-modal-description"
-          variant="subtitle1"
-          lineHeight={1.2}
-          fontWeight={200}
-          sx={{ mt: 2, color: "#8F8F8F" }}
-        >
-          By pressing "I Accept" below you are indicating your agreement to the
-          <a
-            href="https://www.medicalholodeck.com/en/support/pdf/MH%20EULA09-2023%200201.pdf"
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              textDecoration: "none",
-              color: "#707070",
-              display: "inline-block",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <strong>EULA terms</strong>
-              <FileOpen fontSize="small" />
-            </div>
-          </a>
-        </Typography>
-        <Grid container justifyContent={"space-between"} marginTop={4}>
-          <Grid item>
-            <Button
-              variant="contained"
-              onClick={handleAcceptEULA}
-              color="success"
-            >
-              Accept
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={handleClose} color="error" variant="outlined">
-              Decline
-            </Button>
-          </Grid>
-        </Grid>
-      </Box>
-    </Modal>
+    <ModalPopup
+      open={open}
+      handleClose={handleClose}
+      handleAcceptEULA={handleAcceptEULA}
+    />
   );
 
   return (
     <>
       {showModal}
+      {/* Find different way of void-linking */}
       <a href={requireEULA() ? "javascript:void(0)" : link}>
         <ButtonBase
           disableRipple
