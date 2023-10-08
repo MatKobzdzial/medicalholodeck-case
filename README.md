@@ -5,7 +5,7 @@ Majority of the components were built with Material UI components._
 
 To view this project simply visit this site:
 
-[medicalholodeck-case.vercel.app](medicalholodeck-case.vercel.app)
+[medicalholodeck-case.vercel.app](https://medicalholodeck-case.vercel.app/)
 
 or install it locally using npm:
 
