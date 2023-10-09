@@ -5,7 +5,7 @@ const titleBoxStyle = {
   flexDirection: "column",
   alignItems: "center",
   gap: "1rem",
-  marginTop: "2rem",
+  padding: "2rem",
 };
 
 const logoStyle = {

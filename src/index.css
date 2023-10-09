@@ -5,11 +5,118 @@
   box-sizing: border-box;
 }
 
-body {
+.home {
   background-color: #eee;
   background-image: url("data:image/svg+xml,%3Csvg height='100%25' width='100%25' viewBox='0 0 500 500' fill='%23ffffff80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='250' cy='250' r='240' stroke='%23ffffff80' stroke-width='1' fill='none'/%3E%3Cpolygon points='85 258 217 100 265 292 79 371'%3E%3C/polygon%3E%3Cpolygon points='230 127 281 77 339 323 91 380 91 374 274 297'%3E%3C/polygon%3E%3Cpolygon points='295 108 339 71 403 352 105 384 348 330'%3E%3C/polygon%3E%3C/svg%3E");
   background-size: 80%;
   background-position: -45% 40%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.logo-div {
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg height='100%25' width='100%25' viewBox='0 0 500 500' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='250' cy='250' r='240' stroke='%23fff' stroke-width='4' fill='none'/%3E%3Cpolygon points='85 258 217 100 265 292 79 371'%3E%3C/polygon%3E%3Cpolygon points='230 127 281 77 339 323 91 380 91 374 274 297'%3E%3C/polygon%3E%3Cpolygon points='295 108 339 71 403 352 105 384 348 330'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.use-case {
+  background-color: #ffffff;
+}
+
+.anchor,
+.anchor:visited {
+  text-decoration: none;
+  color: #218fff;
+  transition: ease-in-out 0.1s;
+}
+
+.anchor:hover {
+  color: #05498c;
+  transition: ease-in-out 0.1s;
+}
+
+.hr {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+ul li {
+  list-style-type: none;
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+}
+
+ul li:hover {
+  color: rgb(58, 157, 255);
+}
+
+ul p {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  height: 32px;
+  width: 200px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.input-button {
+  cursor: pointer;
+  height: 32px;
+  width: 70px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #218fff;
+  color: #fff;
+  transition: ease-in-out 0.2s;
+}
+
+.input-button:hover {
+  background-color: #05498c;
+}
+
+a {
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+}
+
+a:hover {
+  color: rgb(58, 157, 255);
+}
+
+.toolbar {
+  transition: ease-in-out 1s;
+}
+
+.open {
+  height: max-content;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.open-nav {
+  filter: blur(10px);
+  z-index: 1;
 }

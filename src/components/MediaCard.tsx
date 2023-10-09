@@ -48,7 +48,12 @@ export default function MediaCard({
 
   function handleAcceptEULA() {
     setOpen(false);
-    window.open(link, "_self");
+    // Simple routing to allow the demo to display one page replica
+    if (type === "Use Case: Surgery Education + Training") {
+      window.open("/use-case", "_self");
+    } else {
+      window.open(link, "_self");
+    }
   }
 
   const showModal = requireEULA() && (
